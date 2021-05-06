@@ -30,19 +30,30 @@ body {
   min-height: 100vh;
 }
 
-.container-today h1 {
-  margin: 0 0 2.5rem;
-  text-align: center;
-}
-
 .container-today .date {
   margin-top: 5rem;
   text-align: center;
   color: var(--shadow-color);
 }
 
+.container-today h1 {
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
 .container-today .emoji-scale {
   text-align: center;
+}
+
+.container-today .emoji-scale label[for="mood"] {
+  position: relative;
+  top: -.5rem;
+  left: 0;
+  font-size: 3rem;
+}
+
+.container-today .emoji-scale input {
+  width: 85%;
 }
 
 .container-today .success {
@@ -53,7 +64,7 @@ body {
 }
 
 .container-today .success h2 {
-  margin: 3rem 0 1.5rem;
+  margin: 1.5rem 0 1.5rem;
   cursor: help;
 }
 
