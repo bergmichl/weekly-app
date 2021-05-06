@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Michael Bergmüller">
+  <meta name="keywords" content="Daily accomplishments. Reminder of positivity and good things happening on a daily basis.">
+  <meta name="description" content="This App is supposed to act as a reminder what went well during the day + lets you look back to your previous weeks.">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+
+  <title>Weekly App</title>
+</head>
+
+<body>
+
+  <div class="container container-today">
+    <p class="date"></p>
+    <h1>Wie geht es dir heute?</h1>
+    <div class="emoji-scale">
+      <!-- Emojis -->
+      <input type="range" min="1" max="10">
+      <!-- 1-10 -->
+    </div>
+    <div class="success">
+      <h2 title="Click hier für Inspiration" id="moreInfo">Was hast du gut gemacht?</h2>
+      <p class="hidden" id="info">Erfolge, <br>erledigte Dinge, <br>positive Erlebnisse ...</p>
+      <input type="text">
+      <input type="text">
+      <input type="text">
+      <div class="btns-container">
+        <button>Speichern</button>
+        <button title="Weiteren Erfolg einfügen" id="add"><i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container container-week"></div>
+
+</body>
+
+</html>
