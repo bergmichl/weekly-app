@@ -22,12 +22,16 @@
     <p class="date"></p>
     <h1>Wie geht es dir heute?</h1>
     <div class="emoji-scale">
+      <label class="v-hidden" for="mood">😞</label>
+      <label class="v-hidden" for="mood">😟</label>
       <label for="mood">😐</label>
+      <label class="v-hidden" for="mood">🙂</label>
+      <label class="v-hidden" for="mood">😊</label>
       <input id="mood" type="range" min="1" max="5" step="1">
     </div>
     <div class="success">
       <h2 title="Click hier für Inspiration" id="moreInfo">Was hast du gut gemacht?</h2>
-      <p class="hidden" id="info">Erfolge, <br>erledigte Dinge, <br>positive Erlebnisse ...</p>
+      <p class="d-none" id="info">Erfolge, <br>erledigte Dinge, <br>positive Erlebnisse ...</p>
       <input type="text" required>
       <input type="text" required>
       <input type="text" required>
