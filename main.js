@@ -3,6 +3,7 @@ const moreInfo = document.getElementById('moreInfo');
 const infoEl = document.getElementById('info');
 const addBtn = document.getElementById('add');
 const btnsContainer = document.querySelector('.btns-container');
+// const inputs = document.querySelectorAll('input[type=text]'); ADD "Daumenemoji" after filled inputs 👍
 
 // Get Date and output it on the DOM
 const weekdays = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
@@ -21,9 +22,3 @@ function addInputToDOM() {
   btnsContainer.parentNode.insertBefore(newInputEl, btnsContainer)
   newInputEl.focus()
 }
-
-
-
-// TODO:
-// Wenn ein Input gefüllt wird, dann daumen-emoji dahinter
-// Choose a font (CSS)
