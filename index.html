@@ -6,10 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Michael Bergmüller">
-  <meta name="keywords" content="Daily accomplishments. Reminder of positivity and good things happening on a daily basis.">
-  <meta name="description" content="This App is supposed to act as a reminder what went well during the day + lets you look back to your previous weeks.">
+  <meta name="keywords"
+    content="Daily accomplishments. Reminder of positivity and good things happening on a daily basis.">
+  <meta name="description"
+    content="This App is supposed to act as a reminder what went well during the day + lets you look back to your previous weeks.">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
   <link rel="stylesheet" href="style.css">
   <script src="main.js" defer></script>
 
@@ -17,6 +21,16 @@
 </head>
 
 <body>
+
+  <div class="container-nav">
+    <button id="toggle-nav"><i class="fas fa-bars"></i></button>
+    <nav class="nav-overview d-none">
+      <ul>
+        <li id="li-today">Eintrag machen</li>
+        <li id="li-week">Aktuelle Woche</li>
+      </ul>
+    </nav>
+  </div>
 
   <div class="container container-today">
     <p class="date"></p>
@@ -42,7 +56,14 @@
     </div>
   </div>
 
-  <div class="container container-week"></div>
+  <div class="container container-week d-none">
+    <h2>Übersicht, wie die Woche bis jetzt war:</h2>
+    <ul>
+      <li>Alle ausgefüllten Tage der aktuellen Woche als Kacheln dargestellt.</li>
+      <li>Farblich hinterlegt je nachdem wie gut: rot - grün</li>
+      <li>Per Klick auf die jeweilige Kachel können die jeweiligen Tagespunkte eingesehen werden.</li>
+    </ul>
+  </div>
 
 </body>
 
