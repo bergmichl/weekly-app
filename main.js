@@ -1,4 +1,5 @@
 const containers = document.querySelectorAll('.container');
+const containerToday = document.querySelector('.container-today');
 const toggleNavBtn = document.getElementById('toggle-nav');
 const navEl = document.querySelector('nav');
 const dateEl = document.querySelector('.date');
@@ -39,6 +40,8 @@ addBtn.addEventListener('click', addInputToDOM);
 submitBtn.addEventListener('click', submitTodayLS);
 
 // ----- FUNCTIONS -----
+checkStatus();
+
 function addInputToDOM() {
   let newInputEl = document.createElement('input');
   newInputEl.setAttribute('type', 'text');
@@ -70,6 +73,7 @@ function submitTodayLS() {
   })
 
   localStorage.setItem('weekly', JSON.stringify(entry));
+  checkStatus();
 }
 
 function getCheckedFields() {
@@ -82,4 +86,17 @@ function getCheckedFields() {
   });
 
   return checkedFieldsArr;
+}
+
+// Check if daily entry has been made
+function checkStatus() {
+  let lastEntry = JSON.parse(localStorage.getItem('weekly'));
+  let lastEntryDate = lastEntry[0].date;
+
+  if(dateEl.innerText == lastEntryDate) {
+    let messageNode = document.createElement('h1');
+    messageNode.innerHTML = 'Super - du hast den heutigen Eintrag erledigt!';
+    containerToday.innerHTML = '';
+    containerToday.appendChild(messageNode);
+  } else return;
 }
