@@ -8,7 +8,7 @@ const labelEls = document.querySelectorAll('label[for=mood]');
 const rangeInput = document.getElementById('mood');
 const moreInfo = document.getElementById('moreInfo');
 const infoEl = document.getElementById('info');
-const inputs = document.querySelectorAll('input[type=text]');
+let inputs = document.querySelectorAll('input[type=text]');
 const btnsContainer = document.querySelector('.btns-container');
 const submitBtn = document.getElementById('submit');
 const addBtn = document.getElementById('add');
@@ -44,15 +44,35 @@ rangeInput.addEventListener('input', updateEmoji);
 moreInfo.addEventListener('click', () => infoEl.classList.toggle('d-none'));
 addBtn.addEventListener('click', addInputToDOM);
 submitBtn.addEventListener('click', submitTodayLS);
+inputs.forEach((input) => input.addEventListener('blur', () => showThumb(input)));
+
 
 // ----- FUNCTIONS -----
 checkStatus();
+
+function showThumb(input) {
+  if(input.value != '') {
+    let thumb = document.createElement('span');
+    thumb.classList.add('thumb');
+    thumb.innerText = '👍';
+    thumb.style.fontSize = '1.3rem';
+    thumb.style.position = 'absolute';
+    thumb.style.top = `${input.getBoundingClientRect().top}px`;
+    thumb.style.left = `${input.getBoundingClientRect().right - 25}px`;
+    document.body.appendChild(thumb);
+    setTimeout(() => thumb.classList.add('go-away'), 1000);
+    setTimeout(() => {
+      document.body.removeChild(thumb)
+    }, 2000);
+  }
+}
 
 function addInputToDOM() {
   let newInputEl = document.createElement('input');
   newInputEl.setAttribute('type', 'text');
   btnsContainer.parentNode.insertBefore(newInputEl, btnsContainer)
-  newInputEl.focus()
+  newInputEl.focus();
+  newInputEl.addEventListener('blur', () => showThumb(newInputEl));
 }
 
 function updateEmoji() {
@@ -86,6 +106,7 @@ function submitTodayLS() {
 function getCheckedFields() {
   let checkedFieldsArr = [];
 
+  let inputs = document.querySelectorAll('input[type=text]');
   inputs.forEach((input) => {
     if(input.value){
       checkedFieldsArr.push(input.value);
