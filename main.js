@@ -6,8 +6,10 @@ const labelEls = document.querySelectorAll('label[for=mood]');
 const rangeInput = document.getElementById('mood');
 const moreInfo = document.getElementById('moreInfo');
 const infoEl = document.getElementById('info');
-const addBtn = document.getElementById('add');
+const inputs = document.querySelectorAll('input[type=text]');
 const btnsContainer = document.querySelector('.btns-container');
+const submitBtn = document.getElementById('submit');
+const addBtn = document.getElementById('add');
 
 // Navigation
 const li_today = document.getElementById('li-today');
@@ -34,6 +36,7 @@ toggleNavBtn.addEventListener('click', toggleNav);
 rangeInput.addEventListener('input', updateEmoji);
 moreInfo.addEventListener('click', () => infoEl.classList.toggle('d-none'));
 addBtn.addEventListener('click', addInputToDOM);
+submitBtn.addEventListener('click', submitTodayLS);
 
 // ----- FUNCTIONS -----
 function addInputToDOM() {
@@ -58,7 +61,25 @@ function removeAllContainers() {
   });
 }
 
+function submitTodayLS() {
+  let entry = [];
+  entry.push({
+    date: dateEl.innerText,
+    mood: +rangeInput.value,
+    checks: getCheckedFields()
+  })
 
-// const inputs = document.querySelectorAll('input[type=text]'); ADD "Daumenemoji" after filled inputs 👍
-// LOCAL STORAGE!
-// Display LS on "week-page"
+  localStorage.setItem('weekly', JSON.stringify(entry));
+}
+
+function getCheckedFields() {
+  let checkedFieldsArr = [];
+
+  inputs.forEach((input) => {
+    if(input.value){
+      checkedFieldsArr.push(input.value);
+    }
+  });
+
+  return checkedFieldsArr;
+}
