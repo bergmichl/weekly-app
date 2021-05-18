@@ -63,7 +63,7 @@ function showThumb(input) {
     setTimeout(() => thumb.classList.add('go-away'), 1000);
     setTimeout(() => {
       document.body.removeChild(thumb)
-    }, 2000);
+    }, 3000);
   }
 }
 
