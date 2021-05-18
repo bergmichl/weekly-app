@@ -27,14 +27,6 @@ body {
   max-width: 359px;
 }
 
-.d-none {
-  display: none;
-}
-
-.v-hidden {
-  visibility: hidden;
-}
-
 
 
 /* NAV ----------------------*/
@@ -179,6 +171,52 @@ body {
 
 
 /* PASTWEEK ----------------------*/
+.message {
+  margin-bottom: 1rem;
+}
+
 .container-week {
   min-height: 90vh;
+  min-width: 355px;
+}
+
+.container-week .btns-container {
+  margin-top: .5rem;
+  margin-bottom: 1rem;
+}
+
+.backward, .forward {
+  font-size: 1.25rem;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+.day {
+  border: 1px solid var(--shadow-color);
+  padding: .25rem;
+  margin-bottom: .5rem;
+}
+
+.day ul {
+  padding-left: 1.25rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* GLOBAL - if it's on top of the stylesheet, it might get overwritten */
+.d-none {
+  display: none;
+}
+
+.v-hidden {
+  visibility: hidden;
 }
