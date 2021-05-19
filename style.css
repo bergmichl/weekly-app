@@ -98,8 +98,9 @@ body {
   font-size: 3rem;
 }
 
-.o-low {
-  opacity: 3%;
+.v-hidden {
+  visibility: hidden;
+  /* opacity: 3%; */
 }
 
 .container-today .emoji-scale input {
@@ -147,7 +148,7 @@ body {
   transform: scale(.75);
 }
 
-.thumb.go-away { /* .go-away gets added after 1 sec by JS and all removed 1sec later*/
+.thumb.go-away { /* .go-away gets added by JS and removed 3s later*/
   transform: scale(1.5);
   transition: transform 1s ease-in-out;
 }
@@ -194,15 +195,9 @@ body {
   min-width: 355px;
 }
 
-.container-week .btns-container {
-  margin-top: .5rem;
+.statistic h3 {
   margin-bottom: 1rem;
-}
-
-.backward, .forward {
-  font-size: 1.25rem;
-  padding: 0 1rem;
-  cursor: pointer;
+  font-size: 1.1rem;
 }
 
 .day {
@@ -221,16 +216,7 @@ body {
 
 
 
-
-
-
-
-
-/* GLOBAL - if it's on top of the stylesheet, it might get overwritten */
+/* GLOBAL - if it's on top of the stylesheet, it might get overwritten by display: flex */
 .d-none {
   display: none;
-}
-
-.v-hidden {
-  visibility: hidden;
 }

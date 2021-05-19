@@ -27,7 +27,7 @@
     <nav class="nav-overview d-none">
       <ul>
         <li id="li-today">Eintrag machen</li>
-        <li id="li-week">Aktuelle Woche</li>
+        <li id="li-week">Datenbank und Statistik</li>
       </ul>
     </nav>
   </div>
@@ -36,11 +36,11 @@
     <p class="date"></p>
     <h1>Wie geht es dir heute?</h1>
     <div class="emoji-scale">
-      <label class="o-low" for="mood" title="Sehr schlecht">😞</label>
-      <label class="o-low" for="mood" title="Schlecht">😟</label>
+      <label class="v-hidden" for="mood" title="Sehr schlecht">😞</label> <!--1-->
+      <label class="v-hidden" for="mood" title="Schlecht">😟</label>
       <label for="mood" title="Mittelmäßig">😐</label>
-      <label class="o-low" for="mood" title="Gut">🙂</label>
-      <label class="o-low" for="mood" title="Sehr gut">😊</label>
+      <label class="v-hidden" for="mood" title="Gut">🙂</label>
+      <label class="v-hidden" for="mood" title="Sehr gut">😊</label> <!--5-->
       <input id="mood" type="range" min="1" max="5" step="1">
     </div>
     <div class="success">
@@ -57,11 +57,9 @@
   </div>
 
   <div class="container container-week d-none">
-    <div class="btns-container d-none">
-      <button class="backward" title="Woche davor"><i class="fas fa-arrow-left"></i></button>
-      <button class="forward v-hidden" title="Woche danach"><i class="fas fa-arrow-right"></i></button>
+    <div class="statistic d-none">
+      <h3>Durchschnittliche Stimmung: <span id="average-mood"></span></h3>
     </div>
-
     <div class="week"></div>
   </div>
 

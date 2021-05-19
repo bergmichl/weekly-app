@@ -64,7 +64,7 @@ function showThumb(input) {
     thumb.style.top = `${input.getBoundingClientRect().top}px`;
     thumb.style.left = `${input.getBoundingClientRect().right - 25}px`;
     document.body.appendChild(thumb);
-    setTimeout(() => thumb.classList.add('go-away'), 1000);
+    setTimeout(() => thumb.classList.add('go-away'), 1500);
     setTimeout(() => {
       document.body.removeChild(thumb)
     }, 3000);
@@ -80,8 +80,8 @@ function addInputToDOM() {
 }
 
 function updateEmoji() {
-  labelEls.forEach(label => label.classList.add('o-low'));
-  labelEls[rangeInput.value - 1].classList.remove('o-low');
+  labelEls.forEach(label => label.classList.add('v-hidden'));
+  labelEls[rangeInput.value - 1].classList.remove('v-hidden');
 }
 
 function toggleNav() {
@@ -141,16 +141,43 @@ function checkStatus() {
       containerToday.appendChild(messageNode);
     } else return;
   }
-  
 }
 
 // output LS data to WEEK-page
 let weeklyDB = JSON.parse(localStorage.getItem('weekly'));
-if(weeklyDB != null) {
-  if(weeklyDB.length > 8) {
-    const btns = document.querySelector('.container-week .btns-container');
-    btns.classList.remove('d-none');
+
+if(weeklyDB) {
+  weeklyDB.reverse();
+  const statistic = document.querySelector('.statistic');
+  statistic.classList.remove('d-none');
+
+  let avNumber = 0;
+  let avText;
+  let avColor;
+  weeklyDB.forEach(day => {
+    avNumber += day.mood;
+  })
+  avNumber = +avNumber / +weeklyDB.length;
+
+  if(avNumber <= 1.5 ){
+    avText = moods[0];
+    avColor = moodColors[0];
+  } else if (avNumber > 1.5 && avNumber <= 2.5){
+    avText = moods[1];
+    avColor = moodColors[1];
+  } else if (avNumber > 2.5 && avNumber <= 3.5){
+    avText = moods[2];
+    avColor = moodColors[2];
+  } else if (avNumber > 3.5 && avNumber <= 4.5){
+    avText = moods[3];
+    avColor = moodColors[3];
+  } else if (avNumber > 4.5){
+    avText = moods[4];
+    avColor = moodColors[4];
   }
+  const nrSpan = document.getElementById('average-mood');
+  nrSpan.innerText = avText;
+  nrSpan.style.color = avColor;
 
   weeklyDB.forEach((day) => {
     let div = document.createElement('div');
@@ -174,16 +201,15 @@ if(weeklyDB != null) {
       let li = document.createElement('li');
       li.innerText = check;
       ul.appendChild(li);
-    })
+    });
 
     week.appendChild(div);
     div.appendChild(h3);
     div.appendChild(p);
     div.appendChild(ul);
-  })
-
+  });
 } else {
-    let messageNode = document.createElement('div');
-    messageNode.innerHTML = '<h1 class="message">Es sind noch keine Einträge vorhanden!</h1><p>Die App speichert nur Daten im jeweiligen Browser, wo sie aufgerufen wird und nur am jeweiligen Gerät.</p>';
-    containerWeek.appendChild(messageNode);
+  let messageNode = document.createElement('div');
+  messageNode.innerHTML = '<h1 class="message">Es sind noch keine Einträge vorhanden!</h1><p>Die App speichert nur Daten im jeweiligen Browser, wo sie aufgerufen wird und nur am jeweiligen Gerät.</p>';
+  containerWeek.appendChild(messageNode);
 }
