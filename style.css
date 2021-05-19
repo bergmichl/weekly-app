@@ -35,6 +35,7 @@ body {
   max-width: 359px;
   width: 100%;
   height: 10vh;
+  z-index: 100;
 }
 
 .container-nav button {
@@ -97,6 +98,10 @@ body {
   font-size: 3rem;
 }
 
+.o-low {
+  opacity: 7%;
+}
+
 .container-today .emoji-scale input {
   width: 305px;
 }
@@ -131,7 +136,7 @@ body {
   width: 100%;
   background-color: var(--shadow-color);
   color: #fff;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
 }
 
 .container-today .success input:focus {

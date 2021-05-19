@@ -36,11 +36,11 @@
     <p class="date"></p>
     <h1>Wie geht es dir heute?</h1>
     <div class="emoji-scale">
-      <label class="v-hidden" for="mood">😞</label>
-      <label class="v-hidden" for="mood">😟</label>
-      <label for="mood">😐</label>
-      <label class="v-hidden" for="mood">🙂</label>
-      <label class="v-hidden" for="mood">😊</label>
+      <label class="o-low" for="mood" title="Sehr schlecht">😞</label>
+      <label class="o-low" for="mood" title="Schlecht">😟</label>
+      <label for="mood" title="Mittelmäßig">😐</label>
+      <label class="o-low" for="mood" title="Gut">🙂</label>
+      <label class="o-low" for="mood" title="Sehr gut">😊</label>
       <input id="mood" type="range" min="1" max="5" step="1">
     </div>
     <div class="success">
@@ -62,18 +62,7 @@
       <button class="forward v-hidden" title="Woche danach"><i class="fas fa-arrow-right"></i></button>
     </div>
 
-    <div class="week">
-
-      <!-- <div class="day">
-        <h3>day1</h3>
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-        </ul>
-      </div> -->
-
-    </div>
+    <div class="week"></div>
   </div>
 
 </body>

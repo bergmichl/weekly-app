@@ -18,6 +18,10 @@ const moodColors = [
   'red', 'orangered', 'orange', 'limegreen', 'lawngreen'
 ];
 
+const moods = [
+  'Sehr schlecht', 'Schlecht', 'Mittelmäßig', 'Gut', 'Sehr gut'
+];
+
 // Navigation
 const li_today = document.getElementById('li-today');
 li_today.addEventListener('click', function() {
@@ -76,8 +80,8 @@ function addInputToDOM() {
 }
 
 function updateEmoji() {
-  labelEls.forEach(label => label.classList.add('v-hidden'));
-  labelEls[rangeInput.value - 1].classList.remove('v-hidden');
+  labelEls.forEach(label => label.classList.add('o-low'));
+  labelEls[rangeInput.value - 1].classList.remove('o-low');
 }
 
 function toggleNav() {
@@ -146,9 +150,19 @@ if(weeklyDB != null) {
     let div = document.createElement('div');
     div.classList.add('day');
     div.style.backgroundColor = moodColors[day.mood - 1];
+    div.style.overflowX = 'auto';
+    div.style.color = 'black';
 
     let h3 = document.createElement('h3');
     h3.innerText = day.date;
+
+    let p = document.createElement('p');
+    p.innerText = moods[day.mood - 1];
+    p.style.textAlign = 'right';
+    p.style.fontSize = '.75rem';
+    p.style.position = 'relative';
+    p.style.top = '-1.2rem';
+
     let ul = document.createElement('ul');
     day.checks.forEach((check) => {
       let li = document.createElement('li');
@@ -158,6 +172,7 @@ if(weeklyDB != null) {
 
     week.appendChild(div);
     div.appendChild(h3);
+    div.appendChild(p);
     div.appendChild(ul);
   })
 
