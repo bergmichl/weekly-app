@@ -15,7 +15,7 @@ const addBtn = document.getElementById('add');
 const week = document.querySelector('.week');
 
 const moodColors = [
-  'red', 'orangered', 'orange', 'limegreen', 'lawngreen'
+  'red', 'orangered', 'orange', 'limegreen', 'green'
 ];
 
 const moods = [
@@ -96,6 +96,12 @@ function removeAllContainers() {
 
 function submitTodayLS() {
   let entry = [];
+
+  let lastEntries = JSON.parse(localStorage.getItem('weekly'));
+  if(lastEntries) {
+    lastEntries.forEach(pastEntry => entry.push(pastEntry));
+  }
+
   entry.push({
     date: dateEl.innerText,
     mood: +rangeInput.value,
@@ -126,7 +132,7 @@ function checkStatus() {
   if(lastEntry === null) {
     return;
   } else {
-    let lastEntryDate = lastEntry[0].date;
+    let lastEntryDate = lastEntry[lastEntry.length - 1].date;
 
     if(dateEl.innerText == lastEntryDate) {
       let messageNode = document.createElement('h1');
