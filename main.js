@@ -13,6 +13,7 @@ const btnsContainer = document.querySelector('.btns-container');
 const submitBtn = document.getElementById('submit');
 const addBtn = document.getElementById('add');
 const week = document.querySelector('.week');
+const form = document.getElementById('main-form');
 
 const moodColors = [
   'red', 'orangered', 'orange', 'limegreen', 'green'
@@ -49,6 +50,7 @@ moreInfo.addEventListener('click', () => infoEl.classList.toggle('d-none'));
 addBtn.addEventListener('click', addInputToDOM);
 submitBtn.addEventListener('click', submitTodayLS);
 inputs.forEach((input) => input.addEventListener('blur', () => showThumb(input)));
+form.addEventListener('submit', e => e.preventDefault());
 
 
 // ----- FUNCTIONS -----
