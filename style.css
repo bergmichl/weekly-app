@@ -72,7 +72,7 @@ body {
 
 /* TODAY ----------------------*/
 .container-today {
-  min-height: 90vh;
+  min-height: calc(90vh - .5rem);
 }
 
 .container-today .date {
@@ -195,8 +195,8 @@ body {
 }
 
 .container-week {
-  min-height: 90vh;
-  min-width: 355px;
+  min-height: calc(90vh - .5rem);
+  width: 100%;
 }
 
 .statistic h3 {
