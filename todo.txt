@@ -1,2 +1,2 @@
-- daumen nach input am richtigen Platz
+- übergang zwischen: input kleiner - daumen - input größer => flüssig, nicht aprupt 
 - merge branches when stable and then use master for automatic deployment with netlify

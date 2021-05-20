@@ -58,27 +58,34 @@ checkStatus();
 
 function showThumb(input) {
   if(input.value != '') {
-    let thumb = document.createElement('span');
-    thumb.classList.add('thumb');
-    thumb.innerText = '👍';
-    thumb.style.fontSize = '1.3rem';
-    thumb.style.position = 'absolute';
-    thumb.style.top = `${input.getBoundingClientRect().top}px`;
-    thumb.style.left = `${input.getBoundingClientRect().right - 25}px`;
-    document.body.appendChild(thumb);
-    setTimeout(() => thumb.classList.add('go-away'), 1500);
+    let span = input.nextElementSibling;
+    span.classList.remove('d-none');
+
+    setTimeout(() => span.classList.add('go-away'), 1000);
     setTimeout(() => {
-      document.body.removeChild(thumb)
-    }, 3000);
+      span.classList.add('d-none');
+      span.classList.remove('go-away');
+    }, 2500);
   }
 }
 
 function addInputToDOM() {
-  let newInputEl = document.createElement('input');
-  newInputEl.setAttribute('type', 'text');
-  btnsContainer.parentNode.insertBefore(newInputEl, btnsContainer)
-  newInputEl.focus();
-  newInputEl.addEventListener('blur', () => showThumb(newInputEl));
+  const div = document.createElement('div');
+  div.classList.add('input-wrapper');
+
+  const input = document.createElement('input');
+  input.setAttribute('type', 'text');
+
+  const span = document.createElement('span');
+  span.classList.add('thumb', 'd-none');
+  span.innerText = '👍';
+
+  div.appendChild(input);
+  div.appendChild(span);
+
+  btnsContainer.parentNode.insertBefore(div, btnsContainer)
+  input.focus();
+  input.addEventListener('blur', () => showThumb(input));
 }
 
 function updateEmoji() {
@@ -133,7 +140,7 @@ function showInvalid(invalidInputsArr) {
   infoEl.classList.remove('d-none');
 
   invalidInputsArr.forEach(input => {
-    input.placeholder = 'Du hast heute bestimmt mind. 3 Dinge gut gemacht!';
+    input.placeholder = 'Du hast heute bestimmt 3 Dinge gut gemacht!';
   })
 }
 
