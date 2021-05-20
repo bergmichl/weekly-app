@@ -95,22 +95,44 @@ function removeAllContainers() {
 }
 
 function submitTodayLS() {
-  let entry = [];
+  let invalid = false;
+  let invalidInputs = [];
 
-  let lastEntries = JSON.parse(localStorage.getItem('weekly'));
-  if(lastEntries) {
-    lastEntries.forEach(pastEntry => entry.push(pastEntry));
-  }
-
-  entry.push({
-    date: dateEl.innerText,
-    mood: +rangeInput.value,
-    checks: getCheckedFields()
+  inputs.forEach(input => {
+    if(input.value == '') {
+      invalid = true;
+      invalidInputs.push(input);
+    }
   })
+  
+  if(invalid) {
+    return showInvalid(invalidInputs);
+  } else {
+    let entry = [];
 
-  localStorage.setItem('weekly', JSON.stringify(entry));
-  checkStatus();
-  window.location.reload();
+    let lastEntries = JSON.parse(localStorage.getItem('weekly'));
+    if(lastEntries) {
+      lastEntries.forEach(pastEntry => entry.push(pastEntry));
+    }
+
+    entry.push({
+      date: dateEl.innerText,
+      mood: +rangeInput.value,
+      checks: getCheckedFields()
+    })
+
+    localStorage.setItem('weekly', JSON.stringify(entry));
+    checkStatus();
+    window.location.reload();
+  }
+}
+
+function showInvalid(invalidInputsArr) {
+  infoEl.classList.remove('d-none');
+
+  invalidInputsArr.forEach(input => {
+    input.placeholder = 'Du hast heute bestimmt mind. 3 Dinge gut gemacht!';
+  })
 }
 
 function getCheckedFields() {

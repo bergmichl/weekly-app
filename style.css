@@ -137,7 +137,10 @@ body {
   width: 100%;
   background-color: var(--shadow-color);
   color: #fff;
-  /* letter-spacing: 1px; */
+}
+
+.container-today .success input::placeholder {
+  color: orange;
 }
 
 .container-today .success input:focus {
