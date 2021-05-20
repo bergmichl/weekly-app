@@ -160,7 +160,7 @@ function checkStatus() {
 
     if(dateEl.innerText == lastEntryDate) {
       let messageNode = document.createElement('h1');
-      messageNode.innerHTML = 'Super - du hast den heutigen Eintrag bereits erledigt!';
+      messageNode.innerHTML = 'Super - du hast den heutigen Eintrag bereits erledigt! 👍';
       containerToday.innerHTML = '';
       containerToday.appendChild(messageNode);
     } else return;
@@ -234,6 +234,7 @@ if(weeklyDB) {
   });
 } else {
   let messageNode = document.createElement('div');
+  messageNode.style.textAlign = 'center';
   messageNode.innerHTML = '<h1 class="message">Es sind noch keine Einträge vorhanden!</h1><p>Die App speichert nur Daten im jeweiligen Browser, wo sie aufgerufen wird und nur am jeweiligen Gerät.</p>';
   containerWeek.appendChild(messageNode);
 }

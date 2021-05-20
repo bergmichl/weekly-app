@@ -31,12 +31,11 @@ body {
 
 /* NAV ----------------------*/
 .container-nav {
-  margin: 0 .5rem;
+  margin: .5rem .5rem 0 .5rem;
+  width: 95%;
   max-width: 359px;
-  width: 100%;
   height: 10vh;
   z-index: 100;
-  position: relative;
 }
 
 .container-nav button {
@@ -47,9 +46,6 @@ body {
   padding: .25em .5em;
   font-size: 2rem;
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .nav-overview ul {
@@ -165,6 +161,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin-bottom: 4rem;
 }
 
 .container-today .success button {
@@ -205,6 +202,7 @@ body {
 .statistic h3 {
   margin-bottom: 1rem;
   font-size: 1.1rem;
+  text-align: center;
 }
 
 .day {
@@ -216,10 +214,6 @@ body {
 .day ul {
   padding-left: 1.25rem;
 }
-
-
-
-
 
 
 
