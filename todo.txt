@@ -1,2 +1,15 @@
-- übergang zwischen: input kleiner - daumen - input größer => flüssig, nicht aprupt 
+- Buttons vertauschen (speichern und +)(wsl. input type=button anstatt button) damit man am smartphone nich automatisch nach dem dritten input absendet
+- undefined fehler mit sonnatg beheben
+- grüner großer Haken wenn erlediger Tag
+- crud bei datenbankeinträgen
+- eigene Seiten für Pages? => page erinnerungen (crud)
+- swipe nav
+- nav weg bei blur
+- offlinefähig durch importierte Icons und font
+- icon für Handy-Startbidlschirm (und desktop)
+
+
 - merge branches when stable and then use master for automatic deployment with netlify
+- gentlemänner bescheid sagen und ev. familie
+
+anderer domainname: z.B. myweek, myweeklyapp
