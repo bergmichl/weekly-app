@@ -1,5 +1,5 @@
 - undefined fehler mit sonntag beheben
-- crud bei datenbankeinträgen
+- crUD bei datenbankeinträgen
 - eigene Seiten für Pages? => page erinnerungen (crud)
 - swipe nav
 - offlinefähig durch importierte Icons und font
