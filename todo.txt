@@ -1,5 +1,4 @@
 - undefined fehler mit sonntag beheben
-- grüner großer Haken wenn erlediger Tag
 - crud bei datenbankeinträgen
 - eigene Seiten für Pages? => page erinnerungen (crud)
 - swipe nav

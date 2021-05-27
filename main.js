@@ -166,10 +166,14 @@ function checkStatus() {
     let lastEntryDate = lastEntry[lastEntry.length - 1].date;
 
     if(dateEl.innerText == lastEntryDate) {
-      let messageNode = document.createElement('h1');
-      messageNode.innerHTML = 'Super - du hast den heutigen Eintrag bereits erledigt! 👍';
+      let messageNode = document.createElement('h2');
+      messageNode.classList.add('done-text')
+      messageNode.innerHTML = 'Super - du hast den heutigen Eintrag bereits erledigt!';
+      let icon = document.createElement('i');
+      icon.classList.add("far", "fa-calendar-check", "done-icon");
       containerToday.innerHTML = '';
       containerToday.appendChild(messageNode);
+      containerToday.appendChild(icon);
     } else return;
   }
 }
