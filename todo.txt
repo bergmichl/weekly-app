@@ -1,5 +1,4 @@
-- Buttons vertauschen (speichern und +)(wsl. input type=button anstatt button) damit man am smartphone nich automatisch nach dem dritten input absendet
-- undefined fehler mit sonnatg beheben
+- undefined fehler mit sonntag beheben
 - grüner großer Haken wenn erlediger Tag
 - crud bei datenbankeinträgen
 - eigene Seiten für Pages? => page erinnerungen (crud)
@@ -7,9 +6,10 @@
 - nav weg bei blur
 - offlinefähig durch importierte Icons und font
 - icon für Handy-Startbidlschirm (und desktop)
+- erinnerungen abhaken und sogleich auf das daily-input setzen
 
 
 - merge branches when stable and then use master for automatic deployment with netlify
 - gentlemänner bescheid sagen und ev. familie
 
-anderer domainname: z.B. myweek, myweeklyapp
+anderer domainname: z.B. myweek, myweeklyapp, weekly-app.com, weekly.app

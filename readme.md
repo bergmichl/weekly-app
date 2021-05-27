@@ -1,12 +1,12 @@
 # What it's supposed to be:
 
-* Write down all the positive things that happend to you during the day or rather you did well.
+* Write down all the positive things that happend to you during the day OR you did well OR you are thankful for.
 
 * This is supposed to act as a daily reminder to be positive and be aware of good things happening, even the smallest things.
 
 * This is meant to shift your focus to good things and keep/make you happy and thankful.
 
-* Especially if you don't feel good, you can have a look back into the recent past. 
+* You can have a look back into the recent past of your emotions and well-dones. 
 
 # Supposed to be implemented:
 
