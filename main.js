@@ -16,7 +16,7 @@ const week = document.querySelector('.week');
 const form = document.getElementById('main-form');
 
 const moodColors = [
-  'red', 'orangered', 'orange', 'limegreen', 'green'
+  'red', 'orangered', 'orange', 'green', 'limegreen'
 ];
 
 const moods = [
@@ -169,11 +169,12 @@ function checkStatus() {
       let messageNode = document.createElement('h2');
       messageNode.classList.add('done-text')
       messageNode.innerHTML = 'Super - du hast den heutigen Eintrag bereits erledigt!';
-      let icon = document.createElement('i');
-      icon.classList.add("far", "fa-calendar-check", "done-icon");
+      let img = document.createElement('img');
+      img.src = "/img/icon.svg";
+      img.classList.add("done-icon");
       containerToday.innerHTML = '';
       containerToday.appendChild(messageNode);
-      containerToday.appendChild(icon);
+      containerToday.appendChild(img);
     } else return;
   }
 }

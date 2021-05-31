@@ -2,8 +2,6 @@
 - crUD bei datenbankeinträgen
 - eigene Seiten für Pages? => page erinnerungen (crud)
 - swipe nav
-- offlinefähig durch importierte Icons und font
-- icon für Handy-Startbidlschirm (und desktop)
 - erinnerungen abhaken und sogleich auf das daily-input setzen
 
 
