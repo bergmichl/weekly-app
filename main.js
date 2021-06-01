@@ -38,9 +38,9 @@ li_week.addEventListener('click', function() {
 })
 
 // Get Date and output it on the DOM
-const weekdays = ['Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag', 'Sonntag'];
+const weekdays = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
 let today = new Date();
-let weekday = weekdays[today.getDay() - 1];
+let weekday = weekdays[today.getDay()]; // getDay() returns => 0 = Sonntag, 1 = Montag ..., 6 = Samstag
 dateEl.innerText = `${weekday}, ${today.getDate()}.${+today.getMonth() + 1}.${today.getFullYear()}`;
 
 // ----- EVENT-LISTENERS ------
