@@ -9,11 +9,12 @@
 :root {
   --main-color: #006AE8;
   --shadow-color: rgb(59,59,59);
+  --body-bg-color: #111;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #111;
+  background-color: var(--body-bg-color);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -100,12 +101,53 @@ body {
 
 .v-hidden {
   visibility: hidden;
-  /* opacity: 3%; */
 }
 
-.container-today .emoji-scale input {
+input[type="range"] {
   width: 305px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  border-radius: .7rem;
+  background-color: var(--body-bg-color);
+  box-shadow: 0 0 10px orange;
 }
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+/* Chromium and Safari */
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--shadow-color);
+  border-radius: .7rem;
+  height: 1rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 1.5rem;
+  width: 3rem;
+  margin-top: -.25rem;
+  border-radius: .5rem;
+  background: var(--body-bg-color);
+}
+/* Firefox */
+input[type="range"]::-moz-range-track {
+  background: var(--shadow-color);
+  border-radius: .7rem;
+  height: 1rem;
+}
+
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  height: 1.5rem;
+  width: 3rem;
+  margin-top: -.25rem;
+  border-radius: .5rem;
+  background: var(--body-bg-color);
+  border: none;
+}
+/* --- */
 
 .container-today .success {
   display: flex;

@@ -91,6 +91,18 @@ function addInputToDOM() {
 function updateEmoji() {
   labelEls.forEach(label => label.classList.add('v-hidden'));
   labelEls[rangeInput.value - 1].classList.remove('v-hidden');
+  // change color of shadow
+  if(rangeInput.value == 1) {
+    rangeInput.style.boxShadow = `0 0 10px ${moodColors[0]}`;
+  } else if (rangeInput.value == 2) {
+    rangeInput.style.boxShadow = `0 0 10px ${moodColors[1]}`;
+  } else if (rangeInput.value == 3) {
+    rangeInput.style.boxShadow = `0 0 10px ${moodColors[2]}`;
+  } else if (rangeInput.value == 4) {
+    rangeInput.style.boxShadow = `0 0 10px ${moodColors[3]}`;
+  } else if (rangeInput.value == 5) {
+    rangeInput.style.boxShadow = `0 0 10px ${moodColors[4]}`;
+  }
 }
 
 function toggleNav() {

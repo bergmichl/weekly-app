@@ -1,8 +1,7 @@
-- undefined fehler mit sonntag beheben
 - crUD bei datenbankeinträgen
-- eigene Seiten für Pages? => page erinnerungen (crud)
-- swipe nav
+- Container erinnerungen (crud)
 - erinnerungen abhaken und sogleich auf das daily-input setzen
+- swipe nav implementieren?
 
 
 - merge branches when stable and then use master for automatic deployment with netlify
