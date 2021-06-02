@@ -1,4 +1,5 @@
 - crUD bei datenbankeinträgen
+- db-Eintärge zwecks Übersicht in Wochen Teilen und mit zurück button navigieren 
 - Container erinnerungen (crud)
 - erinnerungen abhaken und sogleich auf das daily-input setzen
 - swipe nav implementieren?
