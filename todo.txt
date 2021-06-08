@@ -5,7 +5,4 @@
 - swipe nav implementieren?
 
 
-- merge branches when stable and then use master for automatic deployment with netlify
-- gentlemänner bescheid sagen und ev. familie
-
-anderer domainname: z.B. myweek, myweeklyapp, weekly-app.com, weekly.app
+- dev & prod hosted versions connected with 2 diffrent branches to have a good hosting setup
