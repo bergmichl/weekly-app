@@ -49,6 +49,10 @@ body {
   cursor: pointer;
 }
 
+.container-nav button:active {
+  transform: scale(.8);
+}
+
 .nav-overview ul {
   position: absolute;
   width: 359px;
