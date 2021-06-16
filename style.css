@@ -51,6 +51,7 @@ body {
 
 .container-nav button:active {
   transform: scale(.8);
+  background-color: var(--shadow-color);
 }
 
 .nav-overview ul {
@@ -65,12 +66,14 @@ body {
 .nav-overview ul li {
   font-weight: bold;
   font-size: 1.5rem;
-  margin: 1rem .5rem;
+  padding: 1rem .5rem;
+  border-bottom: 1px dotted var(--shadow-color);
   cursor: pointer;
 }
 
 .nav-overview ul li:hover {
   color: var(--main-color);
+  background-color: var(--shadow-color);
 }
 
 
