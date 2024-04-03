@@ -14,10 +14,15 @@
 
 * There should be a minimum of 3-5 daily notes before the form can be submitted.
 
-* There should be some sort of view - to have an overview of the past weeks.
+* There should be some sort of view - to have an overview of the past weeks - combined with the ls-database.
+
+* Little effects and animations should be included in the general UI.
+
+# Possible future implementations:
+
+* Change name to a more appropriate one like "Dankbarkeitsritual"
 
 * There should be a random reminder of some past notes every once in a while.
 
-* Little effects and animations should be included in the general UI.
 
 <hr>
