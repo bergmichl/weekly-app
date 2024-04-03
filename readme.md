@@ -20,7 +20,7 @@
 
 # Possible future implementations:
 
-* Change name to a more appropriate one like "Dankbarkeitsritual"
+* Change name to a more appropriate one like "Dankbarkeitsritual" or "daily-app"
 
 * There should be a random reminder of some past notes every once in a while.
 
