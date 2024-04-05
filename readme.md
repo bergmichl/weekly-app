@@ -1,3 +1,7 @@
+Hosted at:
+<br>
+https://weekly-app-mb.netlify.app/
+
 # What it's supposed to be:
 
 * Write down all the positive things that happend to you during the day OR you did well OR you are thankful for.
